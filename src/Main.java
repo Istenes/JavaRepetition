@@ -10,27 +10,22 @@ public class Main {
         System.out.println(randomNumber);
         Scanner scanner = new Scanner(System.in);
         int numberOfTries = 3;
+        int guessCount;
 
-        for (int guessCount = 1; guessCount <= numberOfTries; guessCount++) {
-            System.out.println("Gissa en siffra mellan 0 och "+maxNumber);
+        for (guessCount = 1; guessCount <= numberOfTries; guessCount++) {
+            System.out.print("\nGissa en siffra mellan 0 och " + maxNumber + " : ");
             int number = scanner.nextInt();
             if (number == randomNumber) {
                 System.out.println("Grattis du gissade rätt!");
+                break;
             } else {
                 System.out.println("Tyvärr gissade du fel :(");
-                if (number > randomNumber){
-                    System.out.printf("Försök nr %d. " , guessCount);
-                    System.out.print ("Du gissade för hogt. ");
-                }
-                else{
-                    System.out.printf("Försök nr %d. " , guessCount);
-                    System.out.print ("Du gissade för lågt. ");
+                if (number > randomNumber) {
+                    System.out.println("Du gissade för hogt. Försök " + guessCount);
+                } else {
+                    System.out.println("Du gissade för lågt. Försök " + guessCount);
                 }
             }
         }
-        System.out.println();
-        System.out.printf("Du har försökt %d gånger", numberOfTries);
-        System.out.println();
-        System.out.println("Exiting....");
     }
 }
