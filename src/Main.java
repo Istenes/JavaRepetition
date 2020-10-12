@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        int maxNumber = 50;
+        int maxNumber = 10;
         Random random = new Random();
         int randomNumber = random.nextInt(maxNumber);
 
@@ -15,7 +15,23 @@ public class Main {
         if (number == randomNumber) {
             System.out.println("Grattis du gissade rätt!");
         } else {
-            System.out.printf("Tyvärr du gissade fel :( rätt siffra var: %d", randomNumber);
+            if (number > randomNumber) {
+                System.out.println("Tyvärr du gissade för högt, gissa igen!");
+                number = scanner.nextInt();
+                if(number == randomNumber) {
+                    System.out.println("Grattis du gissade rätt!");
+                } else {
+                    System.out.printf("Tyvärr du gissade fel, rätt siffra var %d", randomNumber);
+                }
+            } else {
+                System.out.println("Tyvärr du gissade för lågt, gissa igen!");
+                number = scanner.nextInt();
+                if(number == randomNumber) {
+                    System.out.println("Grattis du gissade rätt!");
+                } else {
+                    System.out.printf("Tyvärr du gissade fel, rätt siffra var %d", randomNumber);
+                }
+            }
         }
 
     }
