@@ -36,7 +36,7 @@ public class Main {
             int number = scanner.nextInt();
             if (number == correctNumber) {
                 // Användaren har gissat rätt
-                System.out.printf("Grattis du gissade rätt! Du klarade det på %d/%d försök", guessCount, numberOfTries);
+                System.out.printf("Grattis du gissade rätt! Du klarade det på %d av %d försök", guessCount, numberOfTries);
                 return;
             } else if(number < correctNumber) {
                 System.out.println("Du gissade för lågt, försök igen!");
