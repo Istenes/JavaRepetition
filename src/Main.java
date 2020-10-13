@@ -4,16 +4,23 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        int maxNumber = 10;
+        int maxNumber;
+        int numberOfTries;
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Ange max tal: ");
+        maxNumber = scanner.nextInt();
+
+        System.out.print("Ange max gissningar: ");
+        numberOfTries = scanner.nextInt();
+
         Random random = new Random();
         // Add 1 to make it between 1 and maxNumber
         int correctNumber = random.nextInt(maxNumber) + 1;
         System.out.printf("(correctNumber: %d)\n", correctNumber);
-        int numberOfTries = 3;
 
         for (int guessCount = 1; guessCount <= numberOfTries; guessCount++) {
             System.out.printf("Gissa en siffra mellan 1 och %d: ", maxNumber);
-            Scanner scanner = new Scanner(System.in);
             int number = scanner.nextInt();
             if (number == correctNumber) {
                 // Användaren har gissat rätt
