@@ -7,15 +7,16 @@ public class Main {
         int maxNumber = 10;
         Random random = new Random();
         int correctNumber = random.nextInt(maxNumber);
-
+        System.out.printf("(correctNumber: %d)\n", correctNumber);
         int numberOfTries = 3;
+        
         for (int guessCount = 1; guessCount <= numberOfTries; guessCount++) {
             System.out.printf("Gissa en siffra mellan 0 och %d: ", maxNumber);
             Scanner scanner = new Scanner(System.in);
             int number = scanner.nextInt();
             if (number == correctNumber) {
                 // Användaren har gissat rätt
-                System.out.println("Grattis du gissade rätt!");
+                System.out.printf("Grattis du gissade rätt! Du klarade det på %d försök", guessCount);
                 return;
             } else if(number < correctNumber) {
                 System.out.println("Du gissade för lågt, försök igen!");
@@ -23,6 +24,8 @@ public class Main {
                 System.out.println("Du gissade för högt, försök igen!");
             }
         }
+
+
 
         // Användaren har förlorat
         System.out.printf("Tyvärr du förlorade, rätt svar var: %d", correctNumber);
